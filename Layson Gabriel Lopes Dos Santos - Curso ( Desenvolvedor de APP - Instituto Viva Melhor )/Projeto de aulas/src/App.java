@@ -1,8 +1,21 @@
+//import's
+
 import java.util.Scanner;
+import java.util.random.RandomGenerator;
+import java.util.Collections;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+//classe
+
 public class App {
     public static void main(String[] args) throws Exception{
     
+    //Declaração dos import's
+
     Scanner scan = new Scanner(System.in);
+
+    //Projetos
 
     System.out.println("Escolha o projeto");
     System.out.println("1: Formulário");
@@ -20,8 +33,15 @@ public class App {
     System.out.println("13: Tamanho de texto");
     System.out.println("14: Altura de texto");
     System.out.println("15: Caso contenha");
+    System.out.println("16: Classes");
+
+    //scan
+
     int projeto = scan.nextInt();
     scan.nextLine();
+
+    //projeto 1
+
     if (projeto == 1) { 
         System.out.println("Bem vindo ao formulario!");
         System.out.print("Digite seu nome, por favor: ");
@@ -32,10 +52,16 @@ public class App {
         scan.nextLine();
         String genero = scan.nextLine();
         System.out.println("Seu nome é: "+nome+", Minha idade é: "+idade+", e meu sexo é: "+genero);
+
+    //projeto 2
+
     } else if (projeto == 2) {
         System.out.print("Bem vindo, converteremos seu dinheiro em dolar, digite o valor: ");
         double dinheiro = scan.nextDouble() / 5;
         System.out.println("Você tem " + dinheiro + " dolares");
+
+    //projeto 3
+
     } else if (projeto == 3) {   
         System.out.print("Bom dia, vamos calcular sua média. Primeira Nota: ");
         double nota1 = scan.nextDouble();
@@ -45,6 +71,9 @@ public class App {
         double nota3 = scan.nextDouble();
         double media = (nota1 + nota2 + nota3) / 3;
         System.out.println("Sua média é " + media);
+
+    //projeto 4
+
     } else if (projeto == 4) {
         System.out.println("Bem vindo, veremos se você foi aprovado!");
         System.out.println("Digite sua nota: ");
@@ -55,6 +84,9 @@ public class App {
             System.out.println("Você está de recuperação :(");
         } else {
             System.out.println("Você reprovou... Estude mais!! :("); }
+
+    //projeto 5
+
     } else if (projeto == 5) {
         System.out.println("Bem vindo, veremos se seu numero é negativo ou positivo!");
         System.out.println("Digite seu numero: ");
@@ -63,6 +95,9 @@ public class App {
             System.out.println("Seu numero é positivo!");
         } else {
             System.out.println("Seu numero é negativo!"); }
+
+    //projeto 6
+
     } else if (projeto == 6) {
         System.out.println("Digite o primeiro número: ");
         double num1 = scan.nextDouble();
@@ -90,6 +125,9 @@ public class App {
             break;
             default:
                 System.out.println("Invalido"); }
+        
+    //projeto 7
+
     } else if (projeto == 7) {
         System.out.println("Digite o dia da semana em numero: ");
         int diasmn = scan.nextInt();
@@ -102,6 +140,9 @@ public class App {
             break;
             default:
                 System.out.println("Invalido"); } 
+
+    //projeto 8
+
     } else if (projeto == 8) {
         System.out.println("Digite sua altura: ");
         double altura = scan.nextDouble();
@@ -116,6 +157,9 @@ public class App {
             System.out.println("Digito incorreto!");
         } if (peso!=0) {
             System.out.println("Seu peso ideal é: "+ peso); }
+
+    //projeto 9
+
     } else if (projeto == 9) {
         System.out.println("Selecione a quantidade de maçãs: ");
         double fruit = scan.nextDouble();
@@ -126,6 +170,9 @@ public class App {
             valor = 0.30; }
         double valorfinal = fruit*valor;
         System.out.println("O valor de cada maçã é "+valor+" e o valor total é "+valorfinal);
+
+    //projeto 10
+
     } else if (projeto == 10) {
         System.out.println("Conheça 5 marcas de carros diferentes");
         int marca = 0;
@@ -145,6 +192,9 @@ public class App {
                 break;
                 default:
                     System.out.println("Ferrari"); } }
+
+    //projeto 11
+
     } else if (projeto == 11) {
         System.out.println("Digite a tabuada que o senhor queira ver: ");
         int tabuada = scan.nextInt();
@@ -155,6 +205,9 @@ public class App {
             System.out.println(num+" vezes "+tabuada+ " é igual a: " + valor);
             num++;
         }
+
+    //projeto 12
+
     } else if (projeto == 12) {
         System.out.print("Digite o nome de usuario: ");
         String nome = scan.nextLine();
@@ -175,15 +228,24 @@ public class App {
         if (senhaerr == 4) {
             System.out.println("Usuario bloqueado!");
         }
+    
+    //projeto 13
+    
     } else if (projeto == 13){
         System.err.print("Vamos contar as letras de sua palavra, digite a: ");
         String texto = scan.nextLine();
         int textonum = texto.length();
         System.out.println(textonum+" letras");
+
+    //projeto 14
+    
     } else if (projeto == 14){
         char letras = 'a';
         boolean letrasvf = Character.isLowerCase(letras);
         System.out.println(letrasvf);
+
+    //projeto 15
+
     } else if (projeto == 15){
         System.out.print("Diga nos, para onde quer ir? Sul, Norte, Leste ou Oeste?");
         int loop = 1;
@@ -242,5 +304,14 @@ public class App {
                 System.out.print("Tente novamente: ");
             }
         }
+        
+    //projeto 16
+
+    } else if (projeto == 16) {
+        AppTwo carro = new AppTwo();
+        System.out.print(carro.marca);
+        carro.mostrarmarca();
+
     }
-} }
+}
+}
